@@ -36,6 +36,13 @@ export class App extends Component {
     return this.state.contacts.find(contact => name === contact.name);
   };
 
+  deleteContact = id => {
+    const newContacts = this.state.contacts.filter(
+      contact => contact.id !== id,
+    );
+    this.setState({ contacts: newContacts });
+  };
+
   render() {
     const { filter, contacts } = this.state;
     const filteredContacts = contacts.filter(contact =>
@@ -51,7 +58,10 @@ export class App extends Component {
         <Section>
           <Title>Contacts</Title>
           <Filter filter={filter} handleChange={this.handleChange} />
-          <ContactList contacts={filteredContacts} />
+          <ContactList
+            contacts={filteredContacts}
+            onDeleteContact={this.deleteContact}
+          />
         </Section>
       </Container>
     );
