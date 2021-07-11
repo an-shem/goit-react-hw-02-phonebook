@@ -30,3 +30,16 @@ export const Input = styled.input`
 export const LabelName = styled.span`
   margin-bottom: 8px;
 `;
+
+export const AddButton = styled.button`
+  margin-top: 10px;
+  padding: 2px 8px;
+  background-color: #fff;
+  border: 1px solid #615e5e;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #98b0e4;
+  }
+`;

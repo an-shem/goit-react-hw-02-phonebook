@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Form, Label, Input, LabelName } from './ContactForm.styled';
+import { Form, Label, Input, LabelName, AddButton } from './ContactForm.styled';
 
 export class ContactForm extends Component {
   static propTypes = {
@@ -59,7 +59,7 @@ export class ContactForm extends Component {
             onChange={this.handleChange}
           />
         </Label>
-        <button type="submit">Add contact</button>
+        <AddButton type="submit">Add contact</AddButton>
       </Form>
     );
   }
