@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { v4 as uuidv4 } from 'uuid';
 import { Form, Label, Input, LabelName } from './ContactForm.styled';
 
 export class ContactForm extends Component {
@@ -23,9 +22,8 @@ export class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name, number } = this.state;
-    const id = uuidv4();
-    const data = { id, name, number };
-    this.props.handleSubmit(data);
+
+    this.props.handleSubmit(name, number);
     this.reset();
   };
 
